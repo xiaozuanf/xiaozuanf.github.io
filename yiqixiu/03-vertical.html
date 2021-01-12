@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="animate.min.css">
+ 	 <link rel="stylesheet" href="common.css">
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        background: #fff;
+
+        /* Center slide text vertically */
+        /* display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center; */
+    }
+    .slide1{background: url(img/bj-1.jpg) 0 0 no-repeat;}
+    .slide2{background: url(img/bj-2.jpg) 0 0 no-repeat;}
+    .slide3{background: url(img/bj-3.jpg) 0 0 no-repeat;}
+    .slide4{background: url(img/bj-4.jpg) 0 0 no-repeat;}
+    .slide5{background: url(img/bj-5.jpg) 0 0 no-repeat;}
+    .slide6{background: url(img/bj-6.jpg) 0 0 no-repeat;}
+    .slide7{background: url(img/bj-7.jpg) 0 0 no-repeat;}
+    .slide8{background: url(img/bj-8.jpg) 0 0 no-repeat;}
+    .logo{width: 2.95rem;height: 1.09rem;position: absolute;top: 0.97rem;left: 0.69rem;}
+    .logo img{width: 2.95rem;height: 1.09rem;}
+    .linear1{width: 8.59rem;height: 8.59rem;position: absolute;top: 2rem;left: 1.59rem;}
+    .linear1 img{width: 8.59rem;height: 8.59rem;}
+    .linear2{width: 8.59rem;height: 8.59rem;position: absolute;top: 5rem;left: 0.59rem;}
+    .linear2 img{width: 8.59rem;height: 8.59rem;}
+    .linear3{width: 9.11rem;height: 9.41rem;position: absolute;top: 3rem;left: 0.69rem;}
+    .linear3 img{width: 9.11rem;height: 9.41rem;}
+    .linear4{width: 8.19rem;height: 6.92rem;position: absolute;top: 5rem;left: 0.59rem;}
+    .linear4 img{width: 8.19rem;height: 6.92rem;}
+    .slide1_foot{color: #fff;position: absolute;bottom: 1.28rem;left:2.59rem}
+    .slide1_foot span{font-size: 0.47rem;}
+    .slide1_foot p{font-size: 0.56rem;margin-top: 0.31rem;}
+    .slide2 p{width: 10rem;height: 15.75rem;margin-top:1rem;background-size:cover}
+    .slide3 div{width: 10rem;height: 11.86rem;font-size: 0.375rem;color:#fff;background-size:cover;position: absolute;top:0.31rem;line-height: 11.86rem;}
+    .slide3 img{width: 10rem;height: 11.86rem;position: absolute;top:0;left:0;}
+    .slide3 p{margin-top: 0.31rem;text-align: left;line-height: 0.78rem;display: inline-block;}
+    .title{width: 6.11rem;height: 0.55rem;position: absolute;top:2rem;left:2rem}
+    .title1{width: 3.13rem;height: 3.83rem;position: absolute;top:4rem;left:50%;margin-left:-1.5rem}
+    .title2{position: absolute;top:8.5rem;left:50%;margin-left:-1.56rem;color: #fff;font-size: 0.38rem;line-height: 0.625rem;}
+    .title3{position: absolute;top:10rem;color: #fff;font-size: 0.31rem;text-align: left;padding: 1.3rem 1rem;line-height: 0.625rem;}
+    .slide5 p{color: #fff;line-height: 1rem;margin-top: 1rem;}
+    .list{overflow: hidden;}
+    .list li{float: left;width: 2.28rem;height: 2.28rem;margin:0.5rem;background-size:cover}
+    .slide6 ul{margin-top:1rem}
+    .slide6 li{background-color: rgba(255,255,255,0.5);color:#fff;font-size: 0.375rem;text-align: left;margin:10px 0.43rem;width:9.18rem;height: 2.44rem;}
+    .slide6 img{height: 0.39rem;padding-right:0.39rem}
+    .slide6 h3{color:#fff;font-size: 0.75rem;margin-top:1.5rem}
+    .slide6 p{padding:8px 0.23rem;line-height: 0.5rem;}
+    .slide7 p{width: 9.86rem;height: 8.17rem;position: absolute;top:50%;left:0;margin-top:-4.09rem;background-size:cover}
+    .slide7 .peo{width: 3.17rem;height: 6.02rem;position: absolute;top:6rem;left:0.9rem;background-size:cover}
+    .slide8 ul{margin: 5rem 1.8rem 1rem;}
+    .slide8 input{background-color: rgba(255,255,255,0.5);float: left;}
+    .slide8 li{margin-top:0.625rem;font-size: 0.375rem;color:#fff;overflow: hidden;}
+    .slide8 span{display: inline-block;width:1rem;text-align: left;float: left;line-height: 0.8rem;}
+    .slide8 a{color:#fff;background:#652B7D;width:7.22rem;height: 1.25rem;display: inline-block;text-decoration: none;font-size: 0.56rem;line-height: 1.25rem;}
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+            	<p class="logo ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.3s"><img src="img/logo.png" alt=""></p>
+            	<p class="linear1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><img src="img/slider12.png" alt=""></p>
+            	<p class="linear2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><img src="img/slider13.png" alt=""></p>
+            	<p class="linear3 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><img src="img/slider14.png" alt=""></p>
+            	<p class="linear4 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"><img src="img/slider1-1.png" alt=""></p>
+            	<div class="slide1_foot ani" swiper-animate-effect="rollIn" swiper-animate-duration="1s" swiper-animate-delay="3s">
+            		<span>11月7日下午13:00-18:30</span>
+            		<p>北京大学教室</p>
+            	</div>
+            </div>
+            <div class="swiper-slide slide2">
+            	<p class="ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="1s" swiper-animate-delay="0.6s"><img src="img/slider21.png" alt=""></p>
+            </div>
+            <div class="swiper-slide slide3">
+            	<div class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.6s">
+            		<img src="img/slider31.png" alt="">
+            		<p>	
+            			<span style="font-size: 0.56rem;" class="ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">博看文思校友会</span><br>
+            			<span class="ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s">倾力为你打造高端平台</span><br>
+            			<span class="ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">站在巨人肩膀，成为时代弄儿</span>
+        			</p>
+            	</div>
+            </div>
+            <div class="swiper-slide slide4">
+            	<p class="title ani" swiper-animate-effect="flipInY" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><img src="img/slider41.png" alt=""></p>
+            	<p class="title1 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"><img src="img/slider42.png" alt=""></p>
+            	<p class="title2 ani" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
+            		<span>决胜东方创始人</span><br>
+            		<span>北京大学创业导师</span>
+            	</p>
+            	<p class="title3 ani" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+            		国际教育专家，北京电视台出国游学项目特邀嘉宾，常年往返于美国与中国之间，深入研究中西文化的差异，帮助出国学生提供职业规划。.
+            	</p>
+            </div>
+            <div class="swiper-slide slide5">
+            	<p class="ani" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+            		<span style="font-size: 0.57rem;font-weight: bold;">博看学员优秀代表</span><br>
+            		<span style="font-size: 0.31rem;">为你现场讲述自己的学习经、职场经、创业经</span>
+            	</p>
+            	<ul class="list ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            		<li><img src="img/stu1.png" alt=""></li>
+            	</ul>
+            </div>
+            <div class="swiper-slide slide6">
+            	<h3 class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="0.3s">日程安排</h3>
+            	<ul>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.6s">
+            			<p style="color:red"><img src="img/slider61.png" alt="">14:00-15:00</p>
+            			<p>博看文思CEO靳博致开场词、技术总监刘军池从技术层面解析当前行业发展</p>
+            		</li>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.6s" swiper-animate-delay="1.2s">
+            			<p style="color:red"><img src="img/slider61.png" alt="">15:00-16:00</p>
+            			<p>博看文思优秀学员代表分享自己的学习经历及职场历程</p>
+            		</li>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.6s" swiper-animate-delay="1.8s">
+            			<p style="color:red"><img src="img/slider61.png" alt="">16:00-18:00</p>
+            			<p>移动互联网业内资深大牛畅谈当前形势下的互联网发展&国际视野下如何为自己充电</p>
+            		</li>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.6s" swiper-animate-delay="2.4s">
+            			<p style="color:red"><img src="img/slider61.png" alt="">18:00-18:30</p>
+            			<p>答谢新老学员的支持，现场抽奖，奖品丰厚</p>
+            		</li>
+            	</ul>
+            </div>
+            <div class="swiper-slide slide7">
+            	<p class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="1.2s"><img src="img/slider71.png" alt=""></p>
+            	<p class="peo ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.6s"><img src="img/slider72.png" alt=""></p>
+            </div>
+            <div class="swiper-slide slide8">
+            	<ul>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"><span>姓名</span><input type="text" name="" value=""></li>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><span>手机</span><input type="text" name="" value=""></li>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s"><span>QQ</span><input type="text" name="" value=""></li>
+            		<li class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><span>微信</span><input type="text" name="" value=""></li>
+            	</ul>
+            	<a href="" class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">立即抢座</a>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+       <!--  <div class="swiper-pagination"></div> -->
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="swiper.min.js"></script>
+    <script src="swiper.animate.min.js"></script>
+	<script src="app.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical',
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+	    	swiperAnimateCache(swiper); //隐藏动画元素 
+		    swiperAnimate(swiper); //初始化完成开始动画
+	  	}, 
+	  	onSlideChangeEnd: function(swiper){ 
+		    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+	  	} 
+    });
+    </script>
+</body>
+</html>
